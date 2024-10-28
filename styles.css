@@ -1,0 +1,256 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('Images/castle1.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align to the right */
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent background for readability */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    right: 0; /* Position navbar to the right */
+    z-index: 10; 
+    border-radius: 8px; /* Rounded corners */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-end;
+    gap: 15px; /* Spacing between links */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+/* Tab Content Styling */
+.tab-content {
+    display: none; /* Hidden by default */
+    padding: 20px;
+    background-color: rgba(3, 3, 3, 0.9); /* Semi-transparent background for readability */
+    border-radius: 8px;
+    text-align: left; /* Align text to the left */
+    margin: 0 auto; /* Center content horizontally */
+    max-width: 80%; /* Limit width for better readability */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h1 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+.tab-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(26, 26, 26, 0.9);
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 60px;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+    }
+}
+
+/* Style for Subheadings */
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 30px;
+    color: #ff6347;
+}
+
+/* Style for Unordered Lists */
+ul {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+strong {
+    color: #ff6347;
+}
+
+/* Contact Section Styling */
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    font-size: 24px;
+    color: #ff6347;
+    margin-right: 15px;
+}
+
+.contact-info a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info strong {
+    margin-right: 10px;
+}
+
+/* Splash Screen Styles */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.splash-rectangle {
+    background-color: rgba(255, 99, 71, 0.9);
+    padding: 60px 30px;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.splash-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+#enter-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+#enter-button:hover {
+    background-color: #333;
+}
+
+/* Hide Overflow When Splash Screen is Active */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Adjustments to Main Content */
+#main-content {
+    display: block;
+    padding-top: 60px; /* Offset for navbar */
+}
+/* Mute/Unmute Button Styling in Navbar */
+.navbar #audio-toggle-button {
+    background: none; /* No background to match nav links */
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px; /* Adjust spacing to align with nav links */
+    text-align: right;
+    transition: color 0.3s ease;
+}
+
+.navbar #audio-toggle-button:hover {
+    color: #ff6347; /* Match hover effect of nav links */
+}
+
+.navbar #audio-toggle-button:focus {
+    outline: none; /* Remove outline on focus */
+}

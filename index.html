@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamers Palace</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="background-audio" src="Audio/backgroundmusic.mp3" autoplay loop></audio>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-rectangle">
+            <img src="Images/Gamers Palace.png" alt="Website Icon" class="splash-icon">
+            <button id="enter-button">Enter</button>
+        </div>
+    </div>
+
+    <!-- Main Content (initially hidden) -->
+    <div id="main-content" style="display: none;">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#" class="tab-link" data-tab="about">About Us</a></li>
+                <li><a href="#" class="tab-link" data-tab="games">Games</a></li>
+                <li><a href="#" class="tab-link" data-tab="shop">Shop</a></li>
+                <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
+            <!-- Mute/Unmute Button -->
+            <button id="audio-toggle-button" onclick="toggleAudio()">Mute</button>
+        </ul>
+        </nav>
+
+
+
+    <!-- About Us Section -->
+    <section id="about" class="tab-content active">
+        <h1>About Us</h1>
+        <p>Welcome to <strong>Gamers Palace</strong>, where gaming is more than a hobby – it’s a way of life. Whether you’re a casual gamer, a competitive eSports enthusiast, or a curious newcomer, Gamers Palace is your ultimate destination for everything gaming. We’re a community built by gamers, for gamers, dedicated to creating a space where all players can connect, discover, and level up their gaming experience.</p>
+
+        <h2>Our Passion</h2>
+        <p>At Gamers Palace, we’re passionate about every aspect of gaming culture. Our platform is designed to keep you at the cutting edge with:</p>
+
+        <ul>
+            <li><strong>Game Reviews</strong> – Honest, in-depth reviews from gamers who understand what makes a game truly engaging.</li>
+            <li><strong>News & Updates</strong> – Stay informed with the latest game releases, patches, eSports updates, and industry trends.</li>
+            <li><strong>Guides & Tutorials</strong> – From beginner tips to pro-level strategies, our guides are crafted to help you master your favorite games.</li>
+            <li><strong>Community Forums</strong> – Connect with fellow gamers, share experiences, and find teammates or rivals in our active community spaces.</li>
+        </ul>
+
+        <p>Our mission is to create a thriving hub where gamers of all backgrounds feel at home. We believe in the power of games to inspire, entertain, and connect people worldwide. Join us as we explore new worlds, tackle epic challenges, and celebrate everything that makes gaming great.</p>
+
+        <h2>Welcome to the Palace – Welcome Home</h2>
+    </section>
+
+
+    <!-- Games Section -->
+    <section id="games" class="tab-content">
+        <h1>Games</h1>
+        <p>Explore our collection of exciting games.</p>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="tab-content">
+        <h1>Shop</h1>
+        <p>Purchase merchandise and game upgrades here.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="tab-content">
+        <h1>Contact Us</h1>
+        <p>At Gamers Palace, we pay attention to fellow gamers, and we would like to hear how we can improve.</p>
+    
+        <div class="contact-info">
+            <ul>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <strong>Email:</strong> <a href="mailto:contact@gamerspalace.example.com">contact@gamerspalace.example.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <strong>Phone:</strong> (555) 010-1234
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                    <strong>Instagram:</strong> <a href="https://instagram.com/gamerspalace_official" target="_blank">@gamerspalace_official</a>
+                </li>
+                <li>
+                    <i class="fab fa-twitter"></i>
+                    <strong>Twitter:</strong> <a href="https://twitter.com/gamerspalace_xyz" target="_blank">@gamerspalace_xyz</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    
+<!-- JavaScript Function for Mute/Unmute -->
+<script>
+    // Select the audio element and the toggle button
+    const audio = document.getElementById('background-audio');
+    const toggleButton = document.getElementById('audio-toggle-button');
+
+    // Function to toggle mute/unmute and update button text
+    function toggleAudio() {
+        if (audio.muted) {
+            audio.muted = false;
+            toggleButton.textContent = 'Mute';
+        } else {
+            audio.muted = true;
+            toggleButton.textContent = 'Unmute';
+        }
+    }
+
+    // Optional: Hide splash screen and show main content on "Enter" button click
+    document.getElementById('enter-button').onclick = function() {
+        document.getElementById('splash-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    };
+</script>
+
+
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
